@@ -16,6 +16,7 @@
 
 package android.support.v4.preference;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -217,6 +218,11 @@ public abstract class PreferenceFragment extends Fragment implements
 
         setPreferenceScreen(PreferenceManagerCompat.inflateFromResource(mPreferenceManager, getActivity(),
         		preferencesResId, getPreferenceScreen()));
+    }
+    
+    public PreferenceScreen inflateFromResource(PreferenceManager manager, Activity activity, int resId, PreferenceScreen screen) {
+    	return PreferenceManagerCompat.inflateFromResource(mPreferenceManager, getActivity(),
+    			resId, getPreferenceScreen());
     }
     
     /**
